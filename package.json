@@ -1,0 +1,53 @@
+{
+  "name": "paperplugins",
+  "version": "0.0.1",
+  "description": "A website for submitting and downloading open source PaperMC specific plugins.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node src/server",
+    "dll": "npx webpack --config library.webpack.config.js",
+    "pack": "npx webpack --watch",
+    "build": "npx webpack --config library.webpack.config.js && npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Floffah/paperplugins.git"
+  },
+  "author": "Floffah",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Floffah/paperplugins/issues"
+  },
+  "homepage": "https://github.com/Floffah/paperplugins#readme",
+  "devDependencies": {
+    "@ant-design/icons": "^4.2.1",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-react-constant-elements": "^7.10.4",
+    "@babel/plugin-transform-react-inline-elements": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "antd": "^4.4.3",
+    "autoprefixer": "^9.8.5",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "css-loader": "^4.0.0",
+    "cssnano": "^4.1.10",
+    "html-webpack-plugin": "^4.3.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.7",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
