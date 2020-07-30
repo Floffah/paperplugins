@@ -2,23 +2,30 @@
   "name": "paperplugins",
   "version": "0.0.1",
   "description": "A website for submitting and downloading open source PaperMC specific plugins.",
-  "main": "src/server.js",
-  "scripts": {
-    "test": "node src/server",
-    "dll": "npx webpack --config library.webpack.config.js",
-    "pack": "npx webpack --watch",
-    "build": "npx webpack --config library.webpack.config.js && npx webpack"
+  "homepage": "https://github.com/Floffah/paperplugins#readme",
+  "bugs": {
+    "url": "https://github.com/Floffah/paperplugins/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Floffah/paperplugins.git"
   },
-  "author": "Floffah",
+  "private": true,
   "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/Floffah/paperplugins/issues"
+  "author": "Floffah",
+  "main": "src/server/init.js",
+  "scripts": {
+    "build": "npx webpack --config library.webpack.config.js && npx webpack",
+    "dll": "npx webpack --config library.webpack.config.js",
+    "pack": "npx webpack --watch",
+    "test": "node src/server/init"
   },
-  "homepage": "https://github.com/Floffah/paperplugins#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.1.0",
+    "chalk": "^4.1.0",
+    "express": "^4.17.1",
+    "time-stamp": "^2.2.0"
+  },
   "devDependencies": {
     "@ant-design/icons": "^4.2.1",
     "@babel/core": "^7.10.5",
@@ -28,12 +35,14 @@
     "@babel/plugin-transform-react-inline-elements": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
-    "antd": "^4.4.3",
+    "add-asset-html-webpack-plugin": "^3.1.3",
+    "antd": "^4.5.1",
     "autoprefixer": "^9.8.5",
     "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "css-loader": "^4.0.0",
+    "csp-html-webpack-plugin": "^4.0.0",
+    "css-loader": "^4.1.1",
     "cssnano": "^4.1.10",
     "html-webpack-plugin": "^4.3.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -45,9 +54,9 @@
     "sass": "^1.26.10",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
-    "terser-webpack-plugin": "^3.0.7",
+    "terser-webpack-plugin": "^3.0.8",
     "url-loader": "^4.1.0",
-    "webpack": "^4.44.0",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
 }

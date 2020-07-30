@@ -4,6 +4,8 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const Ocap = require("optimize-css-assets-webpack-plugin");
 const HtmlPlugin = require('html-webpack-plugin');
+const CspPlugin = require('csp-html-webpack-plugin');
+const AddAssetPlugin = require('add-asset-html-webpack-plugin');
 
 let production = false;
 
@@ -57,7 +59,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, 'src/public'),
-        publicPath: "/src/public/",
+        publicPath: "/media/",
         library: "PaperPlugins",
         libraryTarget: "umd",
     },
@@ -112,7 +114,17 @@ module.exports = {
             title: 'Paper Plugins',
             hash: true,
             template: "src/web/html/index.html"
-        })
+        }),
+        new CspPlugin({
+            //"default-src": ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
+            //"img-src": ["'unsafe-inline'", "'self'", "'unsafe-eval'", "*.unsplash.com", "unsplash.com"],
+            'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'", "moz-extension://*.js"],
+            //'frame-src': ["http://51.222.22.1:8125/"]
+        }, {
+            hashingMethod: "sha256",
+            hashEnabled: true,
+            nonceEnabled: true,
+        }),
     ],
     devtool: 'source-map',
     optimization: {

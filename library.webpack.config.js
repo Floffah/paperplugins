@@ -27,7 +27,7 @@ module.exports = {
 
             //ant design stuff will support dark mode in production versions soon only dev builds rn ok bruh
             'antd',
-            'antd/dist/antd.min.css',
+            'antd/dist/antd.dark.min.css',
             //'antd/dist/antd.dark.min.css',
             '@ant-design/icons/lib/components/AntdIcon.js',
             '@ant-design/icons/es/index.js',
